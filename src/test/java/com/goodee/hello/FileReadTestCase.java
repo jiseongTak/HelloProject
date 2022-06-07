@@ -34,7 +34,13 @@ public class FileReadTestCase {
 
 	@Test
 	public void 파일읽기테스트() throws IOException {
-		
+		StringBuilder sb = new StringBuilder();
+		char[] res = {'h','e','l','l','o'};
+		int readCount;
+		while((readCount = reader.read()) != -1) {
+			sb.append((char)readCount);
+		}
+		assertArrayEquals(sb.toString().toCharArray(), res);
 	}
 
 }
